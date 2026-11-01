@@ -1,0 +1,22 @@
+# LLM 统一模型调用服务 —— 依赖清单
+#
+# 说明：本作业默认 USE_MOCK=1，无需任何 API Key 即可跑通并验证全部功能。
+# fastapi / uvicorn / pytest 用于「启动 HTTP 服务」与「pytest 回归」；
+# 纯核心逻辑（路由/限流/重试/观测/适配器/模板）不依赖它们，可单独 import 与测试。
+
+# —— Web 框架（提供 HTTP 服务与流式 StreamingResponse）——
+fastapi>=0.110
+uvicorn[standard]>=0.27
+
+# —— 数据契约（pydantic v2）——
+pydantic>=2.5
+
+# —— 真实 provider 调用（USE_MOCK=0 时生效）——
+httpx>=0.27
+
+# —— 提示词模板（Jinja2 变量替换 + 版本引用）——
+jinja2>=3.1
+pyyaml>=6.0
+
+# —— 测试（可选，用于 pytest 回归；无 pytest 时用 python3 tests/*.py 直接跑）——
+pytest>=8.0

@@ -1,0 +1,9 @@
+id: welcome
+description: 欢迎语模板，演示 Jinja2 变量替换与版本引用
+versions:
+  - version: v1
+    content: |
+      你是 {{ name }}，一名{{ role }}。请用一句话欢迎用户 {{ user }}。
+  - version: v2
+    content: |
+      你好 {{ user }}！我是 {{ name }}（{{ role }}），很高兴为你服务。

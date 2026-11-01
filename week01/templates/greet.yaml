@@ -1,0 +1,5 @@
+id: greet
+description: demo
+versions:
+- version: v1
+  content: 你好 {{ name }}，你是{{ role }}。
